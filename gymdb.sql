@@ -50,7 +50,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `gymdb`;
-INSERT INTO `lift_tracker` (`id`, `time_in`, `time_out`, `muscle_group`, `reps`, `movements`, `date`, `personal_records_set`, `miles_ran`) VALUES (1, '3:00 PM', '4:42 PM', 'chest', 150, 6, '5/10/18', 'none', NULL);
-INSERT INTO `lift_tracker` (`id`, `time_in`, `time_out`, `muscle_group`, `reps`, `movements`, `date`, `personal_records_set`, `miles_ran`) VALUES (2, '12:56 PM', '2:30 PM', 'back', 200, 8, '5/11/18', 'did 25 pullups in one set', NULL);
+INSERT INTO `lift_tracker` (`id`, `time_in`, `time_out`, `muscle_group`, `reps`, `movements`, `date`, `personal_records_set`, `miles_ran`) VALUES (1, '3:00 PM', '4:42 PM', 'chest', 150, 6, '5/10/18', 'none', 1);
+INSERT INTO `lift_tracker` (`id`, `time_in`, `time_out`, `muscle_group`, `reps`, `movements`, `date`, `personal_records_set`, `miles_ran`) VALUES (2, '12:56 PM', '2:30 PM', 'back', 200, 8, '5/11/18', 'did 25 pullups in one set', .8);
 
 COMMIT;
