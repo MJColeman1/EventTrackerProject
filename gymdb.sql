@@ -37,7 +37,7 @@ SET SQL_MODE = '';
 GRANT USAGE ON *.* TO user@localhost;
  DROP USER user@localhost;
 SET SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-CREATE USER 'user'@'localhost' IDENTIFIED BY 'user!@#$';
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'user';
 
 GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'user'@'localhost';
 

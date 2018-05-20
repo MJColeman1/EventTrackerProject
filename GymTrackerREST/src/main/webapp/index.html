@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Workout Tracker</title>
+<script src="js/script.js"></script>
+</head>
+<body>
+  <h1>Welcome to Your Personal Workout Tracker</h1>
+<h2>Find Previous Workout Information</h2>
+  <form name="eventForm">
+    <input type="number" name="eventId">
+    <button name="lookup">Get Workout Details by Id</button>
+  </form>
+
+  <div id="output">
+
+<hr>
+<h2> All Workouts </h2>
+  <div id="liftIndex">
+
+  </div>
+
+  <div id="findWorkout"></div>
+<hr>
+<h2> Add New Workout </h2>
+  <form name="newWorkoutForm">
+        Date of Workout: 
+        <input type="text" name="date"> <br>
+        Time In: 
+        <input type="text" name="timeIn"> <br>
+        Time Out:
+        <input type="text" name="timeOut"> <br>
+        Muscle Group(s) Exercised:
+        <input type="text" name="muscleGroup"> <br>
+        Number of Repetitions:
+        <input type="number" name="reps"> <br>
+        Number of Movements:
+        <input type="number" name="movements"> <br>
+        Personal Records Set:
+        <input type="text" name="personalRecordsSet"> <br>
+        Miles Ran: 
+        <input type="number" name="milesRan"> <br>
+        <button name="newWorkoutButton">Add New Workout</button>
+      </form>
+      <hr>
+
+</body>
+</html>
