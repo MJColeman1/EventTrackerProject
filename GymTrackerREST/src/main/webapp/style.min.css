@@ -1,0 +1,113 @@
+body,
+html {
+    width: 100%;
+    height: 100%
+}
+
+body {
+    font-family: Merriweather, 'Helvetica Neue', Arial, sans-serif
+}
+
+
+hr.light {
+    border-color: #fff
+}
+
+.new-workout {
+    text-align: center;
+}
+
+
+.divider {
+	background-color: #fff;
+	height: 1px;
+	width: 35px;
+}
+
+.text {
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-transform: uppercase;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+}
+
+h1 {
+    text-align: center;
+}
+
+#liftIndex {
+    position: relative;
+    background-color: #bebebe !important
+}
+
+.findById {
+    text-align: center;
+    background-color: #bebebe !important
+}
+
+section {
+    padding: 3rem 0
+}
+
+.section-heading {
+    margin-top: 0
+}
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url("https://besthqwallpapers.com/img/original/13907/dumbbells-gym-workout-dumbbell-rack.jpg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+
+header.masthead hr {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+header.masthead h1 {
+    font-size: 2rem
+}
+
+header.masthead p {
+    font-weight: 300
+}
+
+@media (min-width:768px) {
+    header.masthead p {
+        font-size: 1.15rem
+    }
+}
+
+@media (min-width:992px) {
+    header.masthead {
+        height: 100vh;
+        min-height: 650px;
+        padding-top: 0;
+        padding-bottom: 0
+    }
+    header.masthead h1 {
+        font-size: 3rem
+    }
+}
+
+@media (min-width:1200px) {
+    header.masthead h1 {
+        font-size: 4rem
+    }
+}

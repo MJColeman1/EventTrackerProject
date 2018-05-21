@@ -3,26 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <title>Workout Tracker</title>
+
+<link href="style.min.css" rel="stylesheet">
 <script src="js/script.js"></script>
+
 </head>
 <body>
-  <h1>Welcome to Your Personal Workout Tracker</h1>
-<h2>Find Previous Workout Information</h2>
-  <form name="eventForm">
-    <input type="number" name="eventId">
-    <button name="lookup">Get Workout Details by Id</button>
-  </form>
 
-  <div id="output">
+      <header class="masthead text-center text-white d-flex">
+            <div class="container my-auto">
+              <div class="row">
+                <div class="col-lg-10 mx-auto">
+                </div>
+              </div>
+            </div>
+          </header>
 
+ 
+          <section class="findById">
+                        <h1>Welcome to Your Personal Workout Tracker</h1>
+                        <h3>Find Previous Workout Information</h3>
+                        <form name="eventForm">
+                            <input type="number" name="eventId">
+                            <button name="lookup">Get Workout Details by Id</button>
+                        </form>
+                        <br>
+        </div>
+        <h3> All Workouts (Click to Expand) </h3>
+        <div id="liftIndex" align="center">
+            <!-- <div id="liftIndex"> </div> -->
+        </div>
+    </section>
+
+  <div id="output" align="center"></div>
+  <div id="findWorkout" align="center"> </div>
 <hr>
-<h2> All Workouts </h2>
-  <div id="liftIndex">
-
-  </div>
-
-  <div id="findWorkout"></div>
-<hr>
+<div class="new-workout">
 <h2> Add New Workout </h2>
   <form name="newWorkoutForm">
         Date of Workout: 
@@ -40,10 +56,10 @@
         Personal Records Set:
         <input type="text" name="personalRecordsSet"> <br>
         Miles Ran: 
-        <input type="number" name="milesRan"> <br>
+        <input type="number" name="milesRan"> <br> <br>
         <button name="newWorkoutButton">Add New Workout</button>
       </form>
-      <hr>
-
+    </div>
+<br>
 </body>
 </html>

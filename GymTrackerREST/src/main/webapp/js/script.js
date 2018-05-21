@@ -25,7 +25,7 @@ function init() {
           timeOut: form.timeOut.value,
           muscleGroup: form.muscleGroup.value,
           reps: form.reps.value,
-          movemenets: form.movements.value,
+          movements: form.movements.value,
           personalRecordsSet: form.personalRecordsSet.value,
           milesRan: form.milesRan.value 
          };
@@ -166,15 +166,14 @@ function init() {
         var personalRecordsSet = document.createElement('h5');
         var milesRan = document.createElement('h5');
         var timeLeft = document.createElement('h5');
-        // var arrival2 = arrival.textContent = workout.timeIn;
-        arrival.textContent = workout.timeIn;
-        muscleGroup.textContent = workout.muscleGroup;
-        reps.textContent = workout.reps;
-        movements.textContent = workout.movements;
-        date.textContent = workout.date;
-        personalRecordsSet.textContent = workout.personalRecordsSet;
-        milesRan.textContent = workout.milesRan;
-        timeLeft.textContent = workout.timeOut;
+        arrival.textContent = "Workout Start Time: " + workout.timeIn;
+        muscleGroup.textContent = "Muscle Group Exercised: " + workout.muscleGroup;
+        reps.textContent = "Number of Repetitions Completed: " + workout.reps;
+        movements.textContent = "Number of Exercises Completed: " + workout.movements;
+        date.textContent = "Date: " + workout.date;
+        personalRecordsSet.textContent = "Personal Records Set: " + workout.personalRecordsSet;
+        milesRan.textContent = "Number of Miles Ran: " + workout.milesRan;
+        timeLeft.textContent = "Workout End Time: " + workout.timeOut;
         workoutDiv.appendChild(date);
         workoutDiv.appendChild(arrival);
         workoutDiv.appendChild(timeLeft);
@@ -186,48 +185,48 @@ function init() {
         var date = document.createElement('input');
         date.type = 'text';
         date.name = 'date';
-        date.placeholder = workout.date;
+        date.placeholder = "Date: " + workout.date;
         var timeIn = document.createElement('input');
         timeIn.type = 'text';
         timeIn.name = 'timeIn';
-        timeIn.placeholder = workout.timeIn;
+        timeIn.placeholder = "Workout Start Time: " + workout.timeIn;
         var timeOut = document.createElement('input');
         timeOut.type = 'text';
         timeOut.name = 'timeOut';
-        timeOut.placeholder = workout.timeOut;
+        timeOut.placeholder = "End Time: " + workout.timeOut;
         var muscleGroup = document.createElement('input');
         muscleGroup.type = 'text';
         muscleGroup.name = 'muscleGroup';
-        muscleGroup.placeholder = workout.muscleGroup;
+        muscleGroup.placeholder = "Muscle Group: " + workout.muscleGroup;
         var reps = document.createElement('input');
         reps.type = 'number';
         reps.name = 'reps';
-        reps.placeholder = workout.reps;
+        reps.placeholder = "Repetitions Completed: " + workout.reps;
         var movements = document.createElement('input');
         movements.type = 'number';
         movements.name = 'movements';
-        movements.placeholder = workout.movements;
+        movements.placeholder = "Exercises Performed: " + workout.movements;
         var personalRecordsSet = document.createElement('input');
         personalRecordsSet.type = 'text';
         personalRecordsSet.name = 'personalRecordsSet';
-        personalRecordsSet.placeholder = workout.personalRecordsSet;
+        personalRecordsSet.placeholder = "Personal Records Set: " + workout.personalRecordsSet;
         var milesRan = document.createElement('input');
         milesRan.type = 'number';
         milesRan.name = 'milesRan';
-        milesRan.placeholder = workout.milesRan;
+        milesRan.placeholder = "Miles Ran: " + workout.milesRan;
 
         var updateId = workout.id;
         var updateWorkoutButton = document.createElement('button');
         updateWorkoutButton.name = 'updateWorkoutButton';
         updateWorkoutButton.textContent = 'Update Workout';
         updateWorkoutButton.addEventListener('click', function(e){
-            // e.preventDefault();
+            e.preventDefault();
             // var button = e.target;
             updateWorkout(updateId);
             displayWorkout(workout);
 
         })
-
+        updateForm.textContent = "";
         updateForm.appendChild(date);
         updateForm.appendChild(document.createElement('br'));
         updateForm.appendChild(timeIn);
@@ -246,6 +245,7 @@ function init() {
         updateForm.appendChild(document.createElement('br'));
         updateForm.appendChild(updateWorkoutButton);
         workoutDiv.appendChild(updateForm);
+
     }
 
 
