@@ -166,6 +166,7 @@ function init() {
         var personalRecordsSet = document.createElement('h5');
         var milesRan = document.createElement('h5');
         var timeLeft = document.createElement('h5');
+        var repsPerExercise = document.createElement('h5');
         arrival.textContent = "Workout Start Time: " + workout.timeIn;
         muscleGroup.textContent = "Muscle Group Exercised: " + workout.muscleGroup;
         reps.textContent = "Number of Repetitions Completed: " + workout.reps;
@@ -174,6 +175,7 @@ function init() {
         personalRecordsSet.textContent = "Personal Records Set: " + workout.personalRecordsSet;
         milesRan.textContent = "Number of Miles Ran: " + workout.milesRan;
         timeLeft.textContent = "Workout End Time: " + workout.timeOut;
+        repsPerExercise.textContent = "Average Number of Repetitions per Exercise: " + Math.floor((workout.reps/workout.movements));
         workoutDiv.appendChild(date);
         workoutDiv.appendChild(arrival);
         workoutDiv.appendChild(timeLeft);
@@ -182,6 +184,7 @@ function init() {
         workoutDiv.appendChild(movements);
         workoutDiv.appendChild(personalRecordsSet);
         workoutDiv.appendChild(milesRan);
+        workoutDiv.appendChild(repsPerExercise);
         var date = document.createElement('input');
         date.type = 'text';
         date.name = 'date';
