@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<h2 class="text-center" *ngIf="!selected">All Workouts (Click to Expand)</h2>
+<br>
+<table class="table table-striped" *ngIf="!selected">
+  <tr>
+    <th>Date</th>
+    <th>Muscle Group</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let lift of lifts">
+    <td (click)="displayLift(lift)">{{ lift.date }}</td>  
+    <td (click)="displayLift(lift)">{{ lift.muscleGroup }}</td>  
+    <td><button type="button" class="btn btn-danger" value="Delete" (click)="deleteLift(lift.id)">X</button></td>
+  </tr>
+</table>
+
+<table class="table table-striped" *ngIf="selected && !editLift">
+  <tr>
+    <th>Date</th>
+    <th>Arrival Time</th>
+    <th>Departure Time</th>
+    <th>Muscle Group</th>
+    <th>Repetitions</th>
+    <th># of Exercises</th>
+    <th>Personal Records Set</th>
+    <th>Miles Ran</th>
+    <th>Edit</th>
+    <th>Home</th>
+  </tr>
+    <tr>
+        <td>{{ selected.date }}</td>
+        <td>{{ selected.timeIn }}</td>
+        <td>{{ selected.timeOut }}</td>
+        <td>{{ selected.muscleGroup }}</td>
+        <td>{{ selected.reps }}</td>
+        <td>{{ selected.movements }}</td>
+        <td>{{ selected.personalRecordsSet }}</td>
+        <td>{{ selected.milesRan }}</td>
+        <td><button type="button" class="btn btn-warning" value="Return to List" (click)="setEditLift()" *ngIf="selected">Edit Workout</button> </td>
+        <td><button type="button" class="btn btn-success" value="Return to List" (click)="displayTable()" *ngIf="selected">Return to List</button> </td>
+      </tr>
+    </table>
+
+
+    <!-- Edit Workout -->
+    <h3 *ngIf="editLift">&nbsp;&nbsp;&nbsp;&nbsp;Update Workout</h3>
+    <form class="col-sm-2" *ngIf="editLift">
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="text" class="form-control" id="date" name="date" [(ngModel)]="editLift.date">
+      </div>
+      <div class="form-group">
+        <label for="timeIn">Arrival Time:</label>
+        <input type="text" class="form-control" id="timeIn" name="timeIn" [(ngModel)]="editLift.timeIn">
+      </div>
+      <div class="form-group">
+        <label for="timeOut">Departure Time:</label>
+        <input type="text" class="form-control" id="timeOut" name="timeOut" [(ngModel)]="editLift.timeOut">
+      </div>
+      <div class="form-group">
+        <label for="muscleGroup">Muscle Group:</label>
+        <input type="text" class="form-control" id="muscleGroup" name="muscleGroup" [(ngModel)]="editLift.muscleGroup">
+      </div>
+      <div class="form-group">
+        <label for="reps">Repetitions:</label>
+        <input type="text" class="form-control" id="reps" name="reps" [(ngModel)]="editLift.reps">
+      </div>
+      <div class="form-group">
+        <label for="movements">Movements:</label>
+        <input type="text" class="form-control" id="muscleGroup" name="movements" [(ngModel)]="editLift.movements">
+      </div>
+      <div class="form-group">
+        <label for="personalRecordsSet">Personal Records Set:</label>
+        <input type="text" class="form-control" id="personalRecordsSet" name="personalRecordsSet" [(ngModel)]="editLift.personalRecordsSet">
+      </div>
+      <div class="form-group">
+        <label for="milesRan">Miles Ran:</label>
+        <input type="text" class="form-control" id="milesRan" name="milesRan" [(ngModel)]="editLift.milesRan">
+      </div>
+      <button type="submit" class="btn btn-warning" value="Cancel" (click)="editLift = null">Cancel</button>
+      <button type="submit" class="btn btn-success" value="Update" (click)="updateLift(editLift.id, editLift)">Update</button>
+    </form>
+
+
+    <!-- Add a Workout-->
+      <h3 class="text-center" *ngIf="!selected">Add New Workout</h3>
+      <div class="col-md-4"></div>
+    <form role="form" *ngIf="!selected">
+        <label class="mr-sm-2" for="date">Date:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="date" name="date" [(ngModel)]="liftTracker.date"/>
+        
+        <label class="mr-sm-2" for="timeIn">Arrival Time:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="timeIn" name="timeIn" [(ngModel)]="liftTracker.timeIn"/>
+        
+        <label class="mr-sm-2" for="timeOut">Departure Time:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="timeOut" name="timeOut" [(ngModel)]="liftTracker.timeOut"/>
+        
+        <label class="mr-sm-2" for="muscleGroup">Muscle Group:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="muscleGroup" name="muscleGroup" [(ngModel)]="liftTracker.muscleGroup"/>
+        
+        <label class="mr-sm-2" for="reps">Repetitions:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="reps" name="reps" [(ngModel)]="liftTracker.reps"/>
+        <label class="mr-sm-2" for="movements">Movements:</label>
+            <input type="text" class="form-control mb-2 mr-sm-6" id="muscleGroup" name="movements" [(ngModel)]="liftTracker.movements"/>
+          
+        <label class="mr-sm-2"for="personalRecordsSet">Personal Records Set:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="personalRecordsSet" name="personalRecordsSet" [(ngModel)]="liftTracker.personalRecordsSet"/>
+          
+        <label class="mr-sm-2" for="milesRan">Miles Ran:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="milesRan" name="milesRan" [(ngModel)]="liftTracker.milesRan"/>
+          <br>
+        <button type="submit" class="btn btn-success col-sm-12 text-align:center;" value="Create Workout" (click)="addLift()">Add Workout</button>
+        <br>
+        <br>
+      </form>
+    

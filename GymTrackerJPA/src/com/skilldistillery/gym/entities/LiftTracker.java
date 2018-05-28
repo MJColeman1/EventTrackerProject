@@ -1,4 +1,4 @@
-	package com.skilldistillery.gym.entities;
+package com.skilldistillery.gym.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
